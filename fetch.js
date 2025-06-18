@@ -86,7 +86,7 @@ function iteratorFor(items) {
 export function Headers(headers) {
   this.map = {}
 
-  if (headers instanceof Headers) {
+  if (headers instanceof Headers || (g.Headers && headers instanceof g.Headers)) {
     headers.forEach(function(value, name) {
       this.append(name, value)
     }, this)
